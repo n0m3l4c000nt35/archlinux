@@ -1,6 +1,6 @@
 ![Arch Linux Artwork](https://archlinux.org/static/logos/archlinux-logo-light-90dpi.d36c53534a2b.png)
 
-# Arch Linux
+# Instalación
 
 `Arch Linux Install medium (x86_64, BIOS)`
 
@@ -34,3 +34,10 @@
 - `mkfs.ext4 /dev/sda2`
 - `mkswap /dev/sda3`
 - `swapon`
+
+- `mount /dev/sda2 /mnt`
+- `mkdir /mnt/boot`
+- `mount /dev/sda1 /mnt/boot`
+
+- `pacstrap /mnt linux linux-firmware networkmanager grub wpa_supplicant base base-devel`
+- `genfstab -U /mnt`
