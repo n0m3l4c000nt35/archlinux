@@ -65,4 +65,11 @@
 - `nano /etc/hosts`
   - 127.0.0.1 localhost arch.local arch
   - ::1 localhost
+- `pacman -S neofetch`
+- `reboot now`
+- `sudo systemctl start NetworkManager.service`
+- `sudo systemctl enable NetworkManager.service`
+- `sudo systemctl start wpa_supplicant.service`
+- `sudo systemctl enable wpa_supplicant.service`
+- `pacman -S git`
 - 
