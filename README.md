@@ -1,7 +1,6 @@
 ![Arch Linux Artwork](https://archlinux.org/static/logos/archlinux-logo-light-90dpi.d36c53534a2b.png)
 
 # Instalación
-
 `Arch Linux Install medium (x86_64, BIOS)`
 
 `loadkeys es`
@@ -9,7 +8,6 @@
 `ping -c 1 google.com`
 
 ## Particionado
-
 - `cfdisk`
   - `dos`
   - `New`
@@ -29,12 +27,12 @@
 - `lsblk`
 
 ## Formateo
-
 - `mkfs.vfat -F 32 /dev/sda1`
 - `mkfs.ext4 /dev/sda2`
 - `mkswap /dev/sda3`
 - `swapon`
 
+## Montado
 - `mount /dev/sda2 /mnt`
 - `mkdir /mnt/boot`
 - `mount /dev/sda1 /mnt/boot`
@@ -57,20 +55,22 @@
   - KEYMAP=es
  
 ## Bootloader
-
 - `grub-install /dev/sda`
 - `grub-mkconfig -o /boot/grub/grub.cfg`
 
+### Hostname
 - `echo arch > /etc/hostname`
+
+### Hosts  
 - `nano /etc/hosts`
   - 127.0.0.1 localhost arch.local arch
   - ::1 localhost
-- `pacman -S neofetch`
-- `reboot now`
+
 - `sudo systemctl start NetworkManager.service`
 - `sudo systemctl enable NetworkManager.service`
 - `sudo systemctl start wpa_supplicant.service`
 - `sudo systemctl enable wpa_supplicant.service`
+- `reboot now`
 - `pacman -S git`
 - `mkdir -p Desktop/arch/repos`
 - `cd Desktop/arch/repos`
@@ -83,16 +83,18 @@
 - `chmod +x strap.sh`
 - `sudo su`
 - `./strap.sh`
+  
 - `pacman -S xorg xorg-server`
 - `pacman -S gnome`
 - `systemctl start gdm.service`
 - `systemctl enable gdm.service`
 - `pacman -S kitty`
 - `reboot now`
-- `pacman -S gtkmm`
-- `pacman -S open-vm-tools`
-- `pacman -S xf86-video-vmware xf86-input-vmmouse`
+
+### VMWare tools
+- `pacman -S gtkmm open-vm-tools xf86-video-vmware xf86-input-vmmouse`
 - `systemctl enable vmtoolsd`
+
 - En GNOME ingresar a la configuración del teclado y agregar español
 - En la **kitty** `pacman -S firefox`
 - `pacman -S wget p7zip zsh`
