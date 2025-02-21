@@ -66,11 +66,13 @@
   - 127.0.0.1 localhost arch.local arch
   - ::1 localhost
 
+### Conexión a internet
 - `sudo systemctl start NetworkManager.service`
 - `sudo systemctl enable NetworkManager.service`
 - `sudo systemctl start wpa_supplicant.service`
 - `sudo systemctl enable wpa_supplicant.service`
 - `reboot now`
+
 - `pacman -S git`
 - `mkdir -p Desktop/arch/repos`
 - `cd Desktop/arch/repos`
