@@ -93,3 +93,13 @@
 - `pacman -S open-vm-tools`
 - `pacman -S xf86-video-vmware xf86-input-vmmouse`
 - `systemctl enable vmtoolsd`
+- En GNOME ingresar a la configuración del teclado y agregar español
+- En la **kitty** `pacman -S firefox`
+- `pacman -S wget p7zip zsh`
+- `sudo usermod --shell /usr/bin/zsh arch`
+- `localectl set-xll-keymap es`
+- `paru -S zsh-syntax-highlighting zsh-autosuggestions`
+- `sudo pacman -S locate`
+- `sudo updatedb`
+- `sudo pacman -S lsd bat`
+- `paru -S scrub`
