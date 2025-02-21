@@ -101,5 +101,5 @@
 - `paru -S zsh-syntax-highlighting zsh-autosuggestions`
 - `sudo pacman -S locate`
 - `sudo updatedb`
-- `sudo pacman -S lsd bat`
+- `sudo pacman -S lsd bat mdcat`
 - `paru -S scrub`
