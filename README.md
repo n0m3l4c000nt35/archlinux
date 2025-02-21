@@ -72,4 +72,15 @@
 - `sudo systemctl start wpa_supplicant.service`
 - `sudo systemctl enable wpa_supplicant.service`
 - `pacman -S git`
+- `mkdir -p Desktop/arch/repos`
+- `cd Desktop/arch/repos`
+- `git clone https://aur.archlinux.org/paru-bin.git`
+- `cd paru-bin`
+- `makepkg -si`
+- `cd ~/Desktop/arch/repos`
+- `mkdir blackarch`
+- `curl -O https://blackarch.org/strap.sh`
+- `chmod +x strap.sh`
+- `sudo su`
+- `./strap.sh`
 - 
