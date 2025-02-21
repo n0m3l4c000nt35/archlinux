@@ -40,4 +40,29 @@
 - `mount /dev/sda1 /mnt/boot`
 
 - `pacstrap /mnt linux linux-firmware networkmanager grub wpa_supplicant base base-devel`
-- `genfstab -U /mnt`
+- `genfstab -U /mnt > /mnt/etc/fstab`
+- `arch-chroot /mnt`
+- `passwd`
+- `useradd -m arch`
+- `passwd arch`
+- `usermod -aG wheel arch`
+- `pacman -S sudo vim nano`
+- `nano /etc/sudoers`
+- Descomentar la línea `%wheel ALL=(ALL:ALL) ALL`
+- `nano /etc/locale.gen`
+- `ctrl + w` `en_US` Descomentar la línea
+- `ctrl + w` `es_AR` Descomentar la línea
+- `locale-gen`
+- `nano /etc/vconsole.conf`
+  - KEYMAP=es
+ 
+## Bootloader
+
+- `grub-install /dev/sda`
+- `grub-mkconfig -o /boot/grub/grub.cfg`
+
+- `echo arch > /etc/hostname`
+- `nano /etc/hosts`
+  - 127.0.0.1 localhost arch.local arch
+  - ::1 localhost
+- 
