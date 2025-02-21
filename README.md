@@ -83,4 +83,13 @@
 - `chmod +x strap.sh`
 - `sudo su`
 - `./strap.sh`
-- 
+- `pacman -S xorg xorg-server`
+- `pacman -S gnome`
+- `systemctl start gdm.service`
+- `systemctl enable gdm.service`
+- `pacman -S kitty`
+- `reboot now`
+- `pacman -S gtkmm`
+- `pacman -S open-vm-tools`
+- `pacman -S xf86-video-vmware xf86-input-vmmouse`
+- `systemctl enable vmtoolsd`
