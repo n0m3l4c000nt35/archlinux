@@ -6,6 +6,8 @@
 
 `ping -c 1 google.com`
 
+## Particionado
+
 - `cfdisk`
   - `dos`
   - `New`
@@ -22,3 +24,11 @@
   - `Write`
     - `yes`
   - `Quit`
+- `lsblk`
+
+## Formateo
+
+- `mkfs.vfat -F 32 /dev/sda1`
+- `mkfs.ext4 /dev/sda2`
+- `mkswap /dev/sda3`
+- `swapon`
