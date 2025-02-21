@@ -1,3 +1,5 @@
+![Arch Linux Artwork](https://archlinux.org/static/logos/archlinux-logo-light-90dpi.d36c53534a2b.png)
+
 # Arch Linux
 
 `Arch Linux Install medium (x86_64, BIOS)`
