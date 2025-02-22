@@ -141,34 +141,75 @@ echo "LANG=es_AR.UTF-8" > /etc/locale.conf
 echo "KEYMAP=es" > /etc/vconsole.conf
 ```
 
-- `passwd`
-- `useradd -m arch`
-- `passwd arch`
-- `usermod -aG wheel arch`
-- `nano /etc/sudoers`
-- Descomentar la línea `%wheel ALL=(ALL:ALL) ALL`
-- `nano /etc/locale.gen`
-- `ctrl + w` `en_US` Descomentar la línea
-- `ctrl + w` `es_AR` Descomentar la línea
-- `locale-gen`
-- `nano /etc/vconsole.conf`
-  - KEYMAP=es
- 
+## Configurar el nombre del equipo (hostname)
+
+> Definí el nombre de tu máquina:
+
+```bash
+echo "arch" > /etc/hostname
+```
+
+> Agregalo al archivo `/etc/hosts`
+
+```bash
+127.0.0.1   localhost
+::1         localhost
+127.0.1.1   arch.localdomain  arch
+```
+
+## Configurar la red (habilitar NetworkManager)
+
+> Activá NetworkManager para gestionar conexiones automáticamente:
+
+```bash
+systemctl enable NetworkManager
+```
+
+## Crear usuario y configurar sudo
+
+> Creá tu usuario
+
+```bash
+useradd -mG wheel -s /bin/bash arch
+```
+
+> Asignale una contraseña
+
+```bash
+passwd arch
+```
+
+> Permití que los usuarios del grupo `wheel` usen `sudo`
+
+```bash
+nano /etc/sudoers
+```
+
+> Buscá esta línea y descomentala (sacá el #):
+
+```bash
+%wheel ALL=(ALL:ALL) ALL
+```
+
+## Instalar y configurar el bootloader (GRUB)
+
+> Instalá GRUB:
+
+```bash
+pacman -S grub efibootmgr
+```
+
+> Instalalo en el disco (/dev/sda):
+
+```bash
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+```
+
 ## Bootloader
 - `grub-install /dev/sda`
 - `grub-mkconfig -o /boot/grub/grub.cfg`
 
-### Hostname
-- `echo arch > /etc/hostname`
-
-### Hosts  
-- `nano /etc/hosts`
-  - 127.0.0.1 localhost arch.local arch
-  - ::1 localhost
-
 ### Conexión a internet
-- `sudo systemctl start NetworkManager.service`
-- `sudo systemctl enable NetworkManager.service`
 - `sudo systemctl start wpa_supplicant.service`
 - `sudo systemctl enable wpa_supplicant.service`
 - `reboot now`
