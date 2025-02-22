@@ -246,8 +246,13 @@ sudo pacman -S xorg xorg-xinit xorg-server
 ```
 
 ## VMWare tools
-- `pacman -S gtkmm open-vm-tools xf86-video-vmware xf86-input-vmmouse`
-- `systemctl enable vmtoolsd`
+
+> Mejoran la integración de la VM con el host
+
+```bash
+pacman -S gtkmm open-vm-tools xf86-video-vmware xf86-input-vmmouse
+systemctl enable vmtoolsd
+```
 
 - `pacman -S wget p7zip zsh kitty zsh-syntax-highlighting zsh-autosuggestions locate lsd bat mdcat firefox`
 - `paru -S scrub`
