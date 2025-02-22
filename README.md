@@ -79,17 +79,27 @@ pacstrap /mnt linux linux-firmware base base-devel networkmanager wpa_supplicant
 
 ## Generar archivo fstab
 
+> Asegura que las particiones se monten automáticamente al arrancar el sistema.
+
 ```bash
 genfstab -U /mnt > /mnt/etc/fstab
 cat /mnt/etc/fstab
 ```
-> Asegura que las particiones se monten automáticamente al arrancar el sistema.
 
 ## Cambiar el entorno a la instalación nueva en `/mnt`
-    
-- `arch-chroot /mnt`
-> Te coloca dentro del sistema recién instalado, como si ya hubieras iniciado en él.
-> A partir de ahora, todos los comandos afectan a la instalación y no al sistema live de Arch.
+
+> Te coloca dentro del sistema recién instalado, como si ya hubieras iniciado en él. A partir de ahora, todos los comandos afectan a la instalación y no al sistema live de Arch.
+
+```bash
+arch-chroot /mnt
+```
+
+## Configurar zona horaria
+
+> Establece la zona horaria.
+```bash
+ln -sf /usr/share/zoneinfo/America/Argentina/Buenos_Aires /etc/localtime
+```
 
 - `passwd`
 - `useradd -m arch`
