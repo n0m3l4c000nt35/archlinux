@@ -28,10 +28,10 @@
 - `lsblk`
 
 ## Formateo
-- `mkfs.vfat -F 32 /dev/sda1`
+- `mkfs.fat -F32 /dev/sda1`
 - `mkfs.ext4 /dev/sda2`
 - `mkswap /dev/sda3`
-- `swapon`
+- `swapon /dev/sda3`
 
 ## Montado
 - `mount /dev/sda2 /mnt`
