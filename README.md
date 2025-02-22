@@ -77,10 +77,20 @@ pacstrap /mnt linux linux-firmware base base-devel networkmanager wpa_supplicant
   - **git**: Fundamental para clonar repositorios de herramientas de hacking.
   - **vim**: Editor de texto potente que puede ser útil en pentesting.
 
----
+## Generar archivo fstab
+
+```bash
+genfstab -U /mnt > /mnt/etc/fstab
+cat /mnt/etc/fstab
+```
+> Asegura que las particiones se monten automáticamente al arrancar el sistema.
+
+## Cambiar el entorno a la instalación nueva en `/mnt`
     
-- `genfstab -U /mnt > /mnt/etc/fstab`
 - `arch-chroot /mnt`
+> Te coloca dentro del sistema recién instalado, como si ya hubieras iniciado en él.
+> A partir de ahora, todos los comandos afectan a la instalación y no al sistema live de Arch.
+
 - `passwd`
 - `useradd -m arch`
 - `passwd arch`
