@@ -42,6 +42,8 @@
 ## Instalar sistema base
 
 - `pacstrap /mnt linux linux-firmware networkmanager grub wpa_supplicant base base-devel`
+  - **pacstrap**: Script de Arch Linux que usa pacman (el gestor de paquetes de Arch) para instalar paquetes en un directorio específico.
+  - `/mnt`: Indica el directorio donde se instalarán los paquetes (la instalación de Arch montada).
   - **base**: Paquetes esenciales para que el sistema funcione.
   - **base-devel**: Grupo de paquetes para compilación (incluye make, gcc, pacman, etc.), útil para compilar software desde AUR o código fuente.
   - **linux**: Instala el kernel de Linux.
@@ -49,6 +51,9 @@
   - **networkmanager**: Servicio que gestiona conexiones de red de manera automática.
   - **wpa_supplicant**: Necesario para manejar redes WiFi en Linux.
   - **grub**: Bootloader que permite iniciar el sistema.
+  - **git**: Fundamental para clonar repositorios de herramientas de hacking.
+  - **vim**: Editor de texto potente que puede ser útil en pentesting.
+  - **sudo**: Necesario para gestionar permisos sin usar root directamente.
 - `genfstab -U /mnt > /mnt/etc/fstab`
 - `arch-chroot /mnt`
 - `passwd`
