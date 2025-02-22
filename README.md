@@ -3,9 +3,13 @@
 # Instalación
 `Arch Linux Install medium (x86_64, BIOS)`
 
-`loadkeys es`
+```bash
+loadkeys es
+```
 
-`ping -c 1 google.com`
+```bash
+ping -c 1 google.com
+```
 
 ## Particionado
 - `cfdisk`
@@ -28,16 +32,32 @@
 - `lsblk`
 
 ## Formateo
-- `mkfs.fat -F32 /dev/sda1`
-- `mkfs.ext4 /dev/sda2`
-- `mkswap /dev/sda3`
-- `swapon /dev/sda3`
+```bash
+mkfs.fat -F32 /dev/sda1
+```
+```bash
+mkfs.ext4 /dev/sda2
+```
+```bash
+mkswap /dev/sda3
+```
+```bash
+swapon /dev/sda3
+```
 
 ## Montado
-- `mount /dev/sda2 /mnt`
-- `mkdir -p /mnt/boot/efi`
-- `mount /dev/sda1 /mnt/boot/efi`
-- `lsblk`
+```bash
+mount /dev/sda2 /mnt
+```
+```bash
+mkdir -p /mnt/boot/efi
+```
+```bash
+mount /dev/sda1 /mnt/boot/efi
+```
+```bash
+lsblk
+```
 
 ## Instalar sistema base
 
