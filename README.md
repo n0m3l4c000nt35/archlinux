@@ -7,7 +7,7 @@ Modificar en las opciones avanzadas de la máquina virtual el tipo de firmware a
 `Arch Linux Install medium (x86_64, BIOS)`
 
 ```bash
-loadkeys es
+loadkeys la-latin1
 ```
 
 ```bash
