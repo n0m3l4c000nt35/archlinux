@@ -39,7 +39,16 @@
 - `mount /dev/sda1 /mnt/boot/efi`
 - `lsblk`
 
+## Instalar sistema base
+
 - `pacstrap /mnt linux linux-firmware networkmanager grub wpa_supplicant base base-devel`
+  - **base**: Paquetes esenciales para que el sistema funcione.
+  - **base-devel**: Grupo de paquetes para compilación (incluye make, gcc, pacman, etc.), útil para compilar software desde AUR o código fuente.
+  - **linux**: Instala el kernel de Linux.
+  - **linux-firmware**: Drivers y firmware para hardware de red, gráficos, WiFi, etc.
+  - **networkmanager**: Servicio que gestiona conexiones de red de manera automática.
+  - **wpa_supplicant**: Necesario para manejar redes WiFi en Linux.
+  - **grub**: Bootloader que permite iniciar el sistema.
 - `genfstab -U /mnt > /mnt/etc/fstab`
 - `arch-chroot /mnt`
 - `passwd`
