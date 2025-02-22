@@ -489,9 +489,19 @@ sudo mkdir -p /root/.config/kitty
 sudo ln -s ~/.config/kitty/kitty.conf /root/.config/kitty/kitty.conf
 ```
 
+## Instalar zsh
+
+```bash
+sudo pacman -S zsh
+```
+
+```bash
+sudo usermod --shell /usr/bin/zsh <user>
+```
+
 ### ESTO NO ESTA INSTALADO AUN ###
 
-- `pacman -S wget p7zip zsh kitty zsh-syntax-highlighting zsh-autosuggestions locate lsd bat mdcat firefox xclip`
+- `pacman -S wget p7zip zsh zsh-syntax-highlighting zsh-autosuggestions locate lsd bat mdcat firefox xclip`
 - `paru -S scrub`
 - `sudo updatedb`
 - `sudo usermod --shell /usr/bin/zsh arch`
