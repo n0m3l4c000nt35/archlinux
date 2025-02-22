@@ -272,11 +272,12 @@ chmod +x ~/.config/bspwm/bspwmrc
 
 ```bash
 nano ~/.xinitrc
+setxkbmap latam
 exec bspwm
 ```
 
 ```bash
-nano .xinitrc
+nano ~/.bash_profile
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
 ```
 
