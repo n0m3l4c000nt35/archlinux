@@ -235,13 +235,17 @@ makepkg -si
 curl -O https://blackarch.org/strap.sh
 chmod +x strap.sh
 sudo ./strap.sh
+rm strap.sh
 # Actualizá la base de datos de pacman para incluir BlackArch
 sudo pacman -Syyu
 ```
   
 ## Instalar xorg
 
-> Servidor gráfico en Linux
+> Servidor gráfico en Linux, permite tener una interfaz gráfica (GUI) en lugar de solo usar la consola
+
+- **xorg**: Metapaquete que instala varios componentes esenciales de Xorg (drivers, utilidades, configuraciones).
+- **xorg-server**: Es el servidor gráfico en sí, que se encarga de dibujar las ventanas en pantalla.
 
 ```bash
 sudo pacman -S xorg xorg-xinit xorg-server
@@ -256,7 +260,7 @@ sudo pacman -S open-vm-tools xf86-video-vmware xf86-input-vmmouse
 systemctl enable vmtoolsd
 ```
 
-- `pacman -S wget p7zip zsh kitty zsh-syntax-highlighting zsh-autosuggestions locate lsd bat mdcat firefox`
+- `pacman -S wget p7zip zsh kitty zsh-syntax-highlighting zsh-autosuggestions locate lsd bat mdcat firefox xclip`
 - `paru -S scrub`
 - `sudo updatedb`
 - `sudo usermod --shell /usr/bin/zsh arch`
