@@ -270,6 +270,11 @@ cp /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/
 chmod +x ~/.config/bspwm/bspwmrc
 ```
 
+```bash
+nano ~/.xinitrc
+exec bspwm
+```
+
 - `pacman -S wget p7zip zsh kitty zsh-syntax-highlighting zsh-autosuggestions locate lsd bat mdcat firefox xclip`
 - `paru -S scrub`
 - `sudo updatedb`
