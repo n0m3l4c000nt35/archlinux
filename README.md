@@ -235,6 +235,8 @@ makepkg -si
 curl -O https://blackarch.org/strap.sh
 chmod +x strap.sh
 sudo ./strap.sh
+# Actualizá la base de datos de pacman para incluir BlackArch
+sudo pacman -Syyu
 ```
   
 ## Instalar xorg
