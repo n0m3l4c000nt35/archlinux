@@ -280,6 +280,8 @@ nano .xinitrc
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
 ```
 
+### ESTO NO ESTA INSTALADO AUN ###
+
 - `pacman -S wget p7zip zsh kitty zsh-syntax-highlighting zsh-autosuggestions locate lsd bat mdcat firefox xclip`
 - `paru -S scrub`
 - `sudo updatedb`
