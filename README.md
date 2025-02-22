@@ -229,33 +229,28 @@ cd paru-bin
 makepkg -si
 ```
 
-- `mkdir -p Desktop/arch/repos`
-- `cd Desktop/arch/repos`
-- `cd ~/Desktop/arch/repos`
-- `mkdir blackarch`
-- `curl -O https://blackarch.org/strap.sh`
-- `chmod +x strap.sh`
-- `sudo su`
-- `./strap.sh`
-  
-- `pacman -S xorg xorg-server`
-- `pacman -S gnome`
-- `systemctl start gdm.service`
-- `systemctl enable gdm.service`
-- `pacman -S kitty`
-- `reboot now`
+## Agregar los repos de BlackArch
 
-### VMWare tools
+```bash
+curl -O https://blackarch.org/strap.sh
+chmod +x strap.sh
+sudo ./strap.sh
+```
+  
+## Instalar xorg
+
+> Servidor gráfico en Linux
+
+```bash
+sudo pacman -S xorg xorg-xinit xorg-server
+```
+
+## VMWare tools
 - `pacman -S gtkmm open-vm-tools xf86-video-vmware xf86-input-vmmouse`
 - `systemctl enable vmtoolsd`
 
-- En GNOME ingresar a la configuración del teclado y agregar español
-- En la **kitty** `pacman -S firefox`
-- `pacman -S wget p7zip zsh`
+- `pacman -S wget p7zip zsh kitty zsh-syntax-highlighting zsh-autosuggestions locate lsd bat mdcat firefox`
+- `paru -S scrub`
+- `sudo updatedb`
 - `sudo usermod --shell /usr/bin/zsh arch`
 - `localectl set-xll-keymap es`
-- `paru -S zsh-syntax-highlighting zsh-autosuggestions`
-- `sudo pacman -S locate`
-- `sudo updatedb`
-- `sudo pacman -S lsd bat mdcat`
-- `paru -S scrub`
