@@ -9,21 +9,22 @@
 
 ## Particionado
 - `cfdisk`
-  - `dos`
-  - `New`
-    - `512M`
-    - `primary`
-  - `New`
-    - `95G`
-    - `primary`
-  - `New`
-    - `4.5G`
-    - `primary`
-    - `Type`
-      - `82 Linux swap / Solaris`
-  - `Write`
-    - `yes`
-  - `Quit`
+  - `gpt`
+    - `New`
+      - `512M`
+      - `Type`
+        - `EFI System`
+    - `New`
+      - `95G`
+        - `Type`
+          - `Linux filesystem`
+    - `New`
+      - `4.5G`
+        - `Type`
+          - `Linux swap`
+    - `Write`
+      - `yes`
+    - `Quit`
 - `lsblk`
 
 ## Formateo
