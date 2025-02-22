@@ -1,6 +1,9 @@
 ![Arch Linux Artwork](https://archlinux.org/static/logos/archlinux-logo-light-90dpi.d36c53534a2b.png)
 
 # Instalación
+
+Modificar en las opciones avanzadas de la máquina virtual el tipo de firmware a `UEFI`
+
 `Arch Linux Install medium (x86_64, BIOS)`
 
 ```bash
