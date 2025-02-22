@@ -35,8 +35,9 @@
 
 ## Montado
 - `mount /dev/sda2 /mnt`
-- `mkdir /mnt/boot`
-- `mount /dev/sda1 /mnt/boot`
+- `mkdir -p /mnt/boot/efi`
+- `mount /dev/sda1 /mnt/boot/efi`
+- `lsblk`
 
 - `pacstrap /mnt linux linux-firmware networkmanager grub wpa_supplicant base base-devel`
 - `genfstab -U /mnt > /mnt/etc/fstab`
