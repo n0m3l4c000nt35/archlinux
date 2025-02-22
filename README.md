@@ -96,9 +96,49 @@ arch-chroot /mnt
 
 ## Configurar zona horaria
 
-> Establece la zona horaria.
+> Establecé la zona horaria.
+
 ```bash
 ln -sf /usr/share/zoneinfo/America/Argentina/Buenos_Aires /etc/localtime
+```
+
+> Sincronizá la hora.
+
+```bash
+hwclock --systohc
+```
+
+## Configurar el idioma y la localización
+
+> Editá el archivo de configuración de locales.
+
+```bash
+nano /etc/locale.gen
+```
+
+> Buscá y descomentá (#) estas líneas:
+
+```bash
+en_US.UTF-8 UTF-8
+es_AR.UTF-8 UTF-8
+```
+
+> Generá los locales:
+
+```bash
+locale-gen
+```
+
+> Creá el archivo de configuración de idioma predeterminado:
+
+```bash
+echo "LANG=es_AR.UTF-8" > /etc/locale.conf
+```
+
+> Configurá el teclado en español para la terminal:
+
+```bash
+echo "KEYMAP=es" > /etc/vconsole.conf
 ```
 
 - `passwd`
