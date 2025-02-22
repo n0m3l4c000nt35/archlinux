@@ -166,6 +166,7 @@ echo "arch" > /etc/hostname
 
 ```bash
 systemctl enable NetworkManager
+systemctl enable wpa_supplicant
 ```
 
 ## Crear usuario y configurar sudo
@@ -206,17 +207,10 @@ pacman -S grub efibootmgr
 
 ```bash
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-## Bootloader
-- `grub-install /dev/sda`
-- `grub-mkconfig -o /boot/grub/grub.cfg`
-
 ### Conexión a internet
-- `sudo systemctl start wpa_supplicant.service`
-- `sudo systemctl enable wpa_supplicant.service`
-- `reboot now`
-
 - `mkdir -p Desktop/arch/repos`
 - `cd Desktop/arch/repos`
 - `git clone https://aur.archlinux.org/paru-bin.git`
