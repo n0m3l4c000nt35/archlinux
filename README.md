@@ -422,6 +422,73 @@ super + shift + alt + t
 sudo pacman -S kitty
 ```
 
+Modificar las siguientes líneas al archivo `~/.config/sxhkd/sxhkdrc`
+
+```bash
+nano ~/.config/sxhkd/sxhkdrc
+```
+
+```bash
+# terminal emulator
+super + Return
+	/usr/bin/kitty
+```
+
+Crear el archivo `~/.config/kitty/kitty.conf` y agregarle el siguiente contenido
+
+```bash
+mkdir -p ~/.config/kitty
+nano ~/.config/kitty/kitty.conf
+```
+
+```bash
+font_family HackNerdFont
+cursor_shape beam
+
+active_border_color #39ff14
+inactive_border_color #5d5d5d
+
+window_margin_width 2
+window_border_width 1
+window_padding_width 5
+
+map ctrl+left neighboring_window left
+map ctrl+right neighboring_window right
+map ctrl+up neighboring_window up
+map ctrl+down neighboring_window down
+
+map ctrl+shift+enter new_window_with_cwd
+map ctrl+shift+t new_tab_with_cwd
+
+map f1 copy_to_buffer a
+map f2 paste_from_buffer a
+map f3 copy_to_buffer b
+map f4 paste_from_buffer b
+map f5 copy_to_buffer c
+map f6 paste_from_buffer c
+map f7 copy_to_buffer d
+map f8 paste_from_buffer d
+map f9 copy_to_buffer e
+map f10 paste_from_buffer e
+
+map ctrl+shift+z toggle_layout stack
+
+tab_bar_style powerline
+
+inactive_tab_background #e06c75
+active_tab_background #98c379
+inactive_tab_foreground #000000
+tab_bar_margin_color #000
+
+background_opacity 0.80
+enable_audio_bell no
+```
+
+```bash
+sudo mkdir -p /root/.config/kitty
+sudo ln -s ~/.config/kitty/kitty.conf /root/.config/kitty/kitty.conf
+```
+
 ### ESTO NO ESTA INSTALADO AUN ###
 
 - `pacman -S wget p7zip zsh kitty zsh-syntax-highlighting zsh-autosuggestions locate lsd bat mdcat firefox xclip`
