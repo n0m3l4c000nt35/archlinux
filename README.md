@@ -210,12 +210,27 @@ grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-### Conexión a internet
+```bash
+exit
+umount -R /mnt
+reboot
+```
+
+```bash
+sudo su
+passwd
+```
+
+## Instalar Paru
+
+```bash
+git clone https://aur.archlinux.org/paru-bin.git
+cd paru-bin
+makepkg -si
+```
+
 - `mkdir -p Desktop/arch/repos`
 - `cd Desktop/arch/repos`
-- `git clone https://aur.archlinux.org/paru-bin.git`
-- `cd paru-bin`
-- `makepkg -si`
 - `cd ~/Desktop/arch/repos`
 - `mkdir blackarch`
 - `curl -O https://blackarch.org/strap.sh`
