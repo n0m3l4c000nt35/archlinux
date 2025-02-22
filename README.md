@@ -260,6 +260,12 @@ sudo pacman -S open-vm-tools xf86-video-vmware xf86-input-vmmouse
 systemctl enable vmtoolsd
 ```
 
+## Instalar bspwm y sxhkd
+
+```bash
+sudo pacman -S bspwm sxhkd
+```
+
 - `pacman -S wget p7zip zsh kitty zsh-syntax-highlighting zsh-autosuggestions locate lsd bat mdcat firefox xclip`
 - `paru -S scrub`
 - `sudo updatedb`
