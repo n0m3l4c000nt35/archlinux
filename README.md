@@ -281,6 +281,147 @@ nano ~/.bash_profile
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
 ```
 
+Modificar las siguientes líneas del archivo `~/.config/sxhkd/sxhkdrc`
+
+```bash
+nano ~/.config/sxhkd/sxhkdrc
+```
+
+```bash
+# quit/restart bspwm
+super + shift + {q,r}
+  bspc {quit,wm -r}
+
+# focus the node in the given direction
+super + {_,shift + }{Left,Down,Up,Right}
+  bspc node -{f,s} {west,south,north,east}
+
+# preselect the direction
+super + ctrl + alt + {Left,Down,Up,Right}
+  bspc node -p {west,south,north,east}
+
+# move a floating window
+super + alt + shift + {Left,Down,Up,Right}
+  bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# custom resize
+super + alt + {Left,Down,Up,Right}
+  ~/.config/bspwm/scripts/bspwm_resize {west,south,north,east}
+```
+
+Eliminar las siguientes líneas del archivo `~/.config/sxhkd/sxhkdrc`
+
+```bash
+nano ~/.config/sxhkd/sxhkdrc
+```
+
+```bash
+# expand a window by moving one of its side outward
+super + alt + {h,j,k,l}
+  bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+super + alt + shift + {h,j,k,l}
+  bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+```
+
+Crear el script `~/.config/bspwm/scripts/bspwm_resize`
+
+```bash
+mkdir ~/.config/bspwm/scripts
+touch ~/.config/bspwm/scripts/bspwm_resize
+chmod +x ~/.config/bspwm/scripts/bspwm_resize
+```
+
+Agregarle el siguiente contenido al archivo `~/.config/bspwm/scripts/bspwm_resize`
+
+```bash
+nano ~/.config/bspwm/scripts/bspwm_resize
+```
+
+```bash
+#!/usr/bin/env dash
+
+if bspc query -N -n focused.floating > /dev/null; then
+	step=20
+else
+	step=100
+fi
+
+case "$1" in
+	west) dir=right; falldir=left; x="-$step"; y=0;;
+	east) dir=right; falldir=left; x="$step"; y=0;;
+	north) dir=top; falldir=bottom; x=0; y="-$step";;
+	south) dir=top; falldir=bottom; x=0; y="$step";;
+esac
+
+bspc node -z "$dir" "$x" "$y" || bspc node -z "$falldir" "$x" "$y"
+```
+
+Agregar la siguiente línea al archivo `~/.config/bspwm/bspwmrc`
+
+Para poder copiar de manera bidireccional entre la máquina host y la máquina virtual, agregar la siguiente línea al archivo `~/.config/bspwm/bspwmrc`
+
+```bash
+nano ~/.config/bspwm/bspwmrc
+```
+
+```bash
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+bspc monitor -d I II III IV V VI VII VIII IX X
+
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc config split_ratio 0.5
+
+bspc config window_gap 4
+bspc config border_width 1
+bspc config normal_border_color "#5d5d5d"
+bspc config focused_border_color "#1A7A14"
+
+vmware-user-suid-wrapper &
+```
+
+Eliminar las siguientes líneas del archivo `$HOME/.config/bspwm/bspwmrc`
+
+```bash
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+```
+
+Agregar lo siguiente al archivo `$HOME/.config/sxhkd/sxhkdrc` para abrir `firefox` y `chromium`
+
+```bash
+nano $HOME/.config/sxhkd/sxhkdrc
+```
+
+```bash
+# open firefox
+super + shift + f
+  /usr/bin/firefox
+
+# open chromium
+super + shift + g
+    /usr/bin/chromium 2>/dev/null & disown
+
+# copy target
+super + shift + alt + t
+  $HOME/.config/bspwm/scripts/copy_target.sh
+```
+
+## Instalar kitty
+
+```bash
+sudo pacman -S kitty
+```
+
 ### ESTO NO ESTA INSTALADO AUN ###
 
 - `pacman -S wget p7zip zsh kitty zsh-syntax-highlighting zsh-autosuggestions locate lsd bat mdcat firefox xclip`
