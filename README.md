@@ -264,6 +264,10 @@ systemctl enable vmtoolsd
 
 ```bash
 sudo pacman -S bspwm sxhkd
+mkdir -p ~/.config/bspwm ~/.config/sxhkd
+cp /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/
+cp /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/
+chmod +x ~/.config/bspwm/bspwmrc
 ```
 
 - `pacman -S wget p7zip zsh kitty zsh-syntax-highlighting zsh-autosuggestions locate lsd bat mdcat firefox xclip`
