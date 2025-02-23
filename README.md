@@ -358,8 +358,6 @@ esac
 bspc node -z "$dir" "$x" "$y" || bspc node -z "$falldir" "$x" "$y"
 ```
 
-Agregar la siguiente línea al archivo `~/.config/bspwm/bspwmrc`
-
 Para poder copiar de manera bidireccional entre la máquina host y la máquina virtual, agregar la siguiente línea al archivo `~/.config/bspwm/bspwmrc`
 
 ```bash
@@ -396,7 +394,7 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 ```
 
-Agregar lo siguiente al archivo `$HOME/.config/sxhkd/sxhkdrc` para abrir `firefox` y `chromium`
+Agregar los siguientes atajos al archivo `$HOME/.config/sxhkd/sxhkdrc` para abrir `firefox` y `chromium`
 
 ```bash
 nano $HOME/.config/sxhkd/sxhkdrc
@@ -422,10 +420,10 @@ super + shift + alt + t
 sudo pacman -S kitty
 ```
 
-Modificar las siguientes líneas al archivo `~/.config/sxhkd/sxhkdrc`
+Modificar las siguientes líneas al archivo `$HOME/.config/sxhkd/sxhkdrc`
 
 ```bash
-nano ~/.config/sxhkd/sxhkdrc
+nano $HOME/.config/sxhkd/sxhkdrc
 ```
 
 ```bash
@@ -434,7 +432,7 @@ super + Return
 	/usr/bin/kitty
 ```
 
-Crear el archivo `~/.config/kitty/kitty.conf` y agregarle el siguiente contenido
+Crear el archivo `$HOME/.config/kitty/kitty.conf` y agregarle el siguiente contenido
 
 ```bash
 mkdir -p ~/.config/kitty
@@ -492,11 +490,18 @@ sudo ln -s ~/.config/kitty/kitty.conf /root/.config/kitty/kitty.conf
 ## Instalar zsh
 
 ```bash
-sudo pacman -S zsh
+sudo pacman -S zsh extra/zsh-autosuggestions extra/zsh-syntax-highlighting
 ```
 
 ```bash
 sudo usermod --shell /usr/bin/zsh <user>
+```
+
+Agregar las siguientes líneas al archivo `$HOME/.zshrc`
+
+```bash
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /home/arch/powerlevel10k/powerlevel10k.zsh-theme
 ```
 
 ### ESTO NO ESTA INSTALADO AUN ###
@@ -504,5 +509,3 @@ sudo usermod --shell /usr/bin/zsh <user>
 - `pacman -S wget p7zip zsh zsh-syntax-highlighting zsh-autosuggestions locate lsd bat mdcat firefox xclip`
 - `paru -S scrub`
 - `sudo updatedb`
-- `sudo usermod --shell /usr/bin/zsh arch`
-- `localectl set-xll-keymap es`
