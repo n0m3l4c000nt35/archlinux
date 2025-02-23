@@ -506,6 +506,13 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /home/arch/powerlevel10k/powerlevel10k.zsh-theme
 ```
 
+Agregar la siguiente línea al archivo `$HOME/.zprofile`
+
+````bash
+nano $HOME/.zprofile
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+```
+
 ### ESTO NO ESTA INSTALADO AUN ###
 
 - `pacman -S wget p7zip locate lsd bat mdcat firefox xclip`
