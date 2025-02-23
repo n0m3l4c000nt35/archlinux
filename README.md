@@ -256,7 +256,7 @@ sudo pacman -S xorg xorg-xinit xorg-server
 > Mejoran la integración de la VM con el host
 
 ```bash
-sudo pacman -S open-vm-tools xf86-video-vmware xf86-input-vmmouse
+sudo pacman -S open-vm-tools xf86-video-vmware xf86-input-vmmouse mesa
 systemctl enable vmtoolsd
 ```
 
