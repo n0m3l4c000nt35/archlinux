@@ -506,6 +506,6 @@ source /home/arch/powerlevel10k/powerlevel10k.zsh-theme
 
 ### ESTO NO ESTA INSTALADO AUN ###
 
-- `pacman -S wget p7zip zsh zsh-syntax-highlighting zsh-autosuggestions locate lsd bat mdcat firefox xclip`
+- `pacman -S wget p7zip locate lsd bat mdcat firefox xclip`
 - `paru -S scrub`
 - `sudo updatedb`
