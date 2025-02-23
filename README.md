@@ -515,6 +515,5 @@ nano $HOME/.zprofile
 
 ### ESTO NO ESTA INSTALADO AUN ###
 
-- `pacman -S p7zip locate lsd bat mdcat firefox xclip`
+- `pacman -S p7zip mdcat firefox xclip`
 - `paru -S scrub`
-- `sudo updatedb`
