@@ -410,6 +410,12 @@ super + shift + alt + t
   $HOME/.config/bspwm/scripts/copy_target.sh
 ```
 
+## Instalar fuente
+
+```bash
+sudo pacman -S ttf-jetbrains-mono
+```
+
 ## Instalar kitty
 
 ```bash
