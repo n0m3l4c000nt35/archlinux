@@ -99,13 +99,13 @@ arch-chroot /mnt
 
 ## Configurar zona horaria
 
-> Establecé la zona horaria.
+Establecer zona horaria
 
 ```bash
 ln -sf /usr/share/zoneinfo/America/Argentina/Buenos_Aires /etc/localtime
 ```
 
-> Sincronizá la hora.
+Sincronizar hora
 
 ```bash
 hwclock --systohc
@@ -113,46 +113,46 @@ hwclock --systohc
 
 ## Configurar el idioma y la localización
 
-> Editá el archivo de configuración de locales.
+Editar el archivo de configuración de locales
 
 ```bash
 nano /etc/locale.gen
 ```
 
-> Buscá y descomentá (#) estas líneas:
+Descomentar estas líneas
 
 ```bash
 en_US.UTF-8 UTF-8
 es_AR.UTF-8 UTF-8
 ```
 
-> Generá los locales:
+Generar locales
 
 ```bash
 locale-gen
 ```
 
-> Creá el archivo de configuración de idioma predeterminado:
+Crear archivo de configuración de idioma predeterminado
 
 ```bash
 echo "LANG=es_AR.UTF-8" > /etc/locale.conf
 ```
 
-> Configurá el teclado en español para la terminal:
+Configurar teclado en español latinoamericano para la terminal
 
 ```bash
-echo "KEYMAP=es" > /etc/vconsole.conf
+echo "KEYMAP=la-latin1" > /etc/vconsole.conf
 ```
 
 ## Configurar el nombre del equipo (hostname)
 
-> Definí el nombre de tu máquina:
+Definir nombre de la máquina
 
 ```bash
 echo "arch" > /etc/hostname
 ```
 
-> Agregalo al archivo `/etc/hosts`
+Agregar al archivo `/etc/hosts`
 
 ```bash
 127.0.0.1   localhost
@@ -162,7 +162,7 @@ echo "arch" > /etc/hostname
 
 ## Configurar la red (habilitar NetworkManager)
 
-> Activá NetworkManager para gestionar conexiones automáticamente:
+Activar NetworkManager para gestionar conexiones automáticamente
 
 ```bash
 systemctl enable NetworkManager
@@ -171,25 +171,25 @@ systemctl enable wpa_supplicant
 
 ## Crear usuario y configurar sudo
 
-> Creá tu usuario
+Crear usuario
 
 ```bash
 useradd -mG wheel -s /bin/bash arch
 ```
 
-> Asignale una contraseña
+Asignarle contraseña
 
 ```bash
 passwd arch
 ```
 
-> Permití que los usuarios del grupo `wheel` usen `sudo`
+Permitir que los usuarios del grupo `wheel` usen `sudo`
 
 ```bash
 nano /etc/sudoers
 ```
 
-> Buscá esta línea y descomentala (sacá el #):
+Descomentar la siguiente línea
 
 ```bash
 %wheel ALL=(ALL:ALL) ALL
@@ -197,13 +197,13 @@ nano /etc/sudoers
 
 ## Instalar y configurar el bootloader (GRUB)
 
-> Instalá GRUB:
+Instalar GRUB
 
 ```bash
 pacman -S grub efibootmgr
 ```
 
-> Instalalo en el disco (/dev/sda):
+Instalarlo en el disco (/dev/sda):
 
 ```bash
 grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
