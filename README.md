@@ -394,7 +394,7 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 ```
 
-Agregar los siguientes atajos al archivo `$HOME/.config/sxhkd/sxhkdrc` para abrir `firefox` y `chromium`
+Agregar los siguientes atajos al archivo `$HOME/.config/sxhkd/sxhkdrc` para abrir `firefox`
 
 ```bash
 nano $HOME/.config/sxhkd/sxhkdrc
@@ -404,10 +404,6 @@ nano $HOME/.config/sxhkd/sxhkdrc
 # open firefox
 super + shift + f
   /usr/bin/firefox
-
-# open chromium
-super + shift + g
-    /usr/bin/chromium 2>/dev/null & disown
 
 # copy target
 super + shift + alt + t
