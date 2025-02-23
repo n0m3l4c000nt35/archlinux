@@ -489,7 +489,7 @@ sudo mkdir -p /root/.config/kitty
 sudo ln -s ~/.config/kitty/kitty.conf /root/.config/kitty/kitty.conf
 ```
 
-## Instalar zsh
+## Instalar zsh y los plugins para que sugiera comandos ya ejecutados y el resaltado de comandos
 
 ```bash
 sudo pacman -S zsh extra/zsh-autosuggestions extra/zsh-syntax-highlighting
@@ -499,7 +499,7 @@ sudo pacman -S zsh extra/zsh-autosuggestions extra/zsh-syntax-highlighting
 sudo usermod --shell /usr/bin/zsh <user>
 ```
 
-Agregar las siguientes líneas al archivo `$HOME/.zshrc`
+Agregar las siguientes líneas al archivo `$HOME/.zshrc` para que funcionen los plugins
 
 ```bash
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
