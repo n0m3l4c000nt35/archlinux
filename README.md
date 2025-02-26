@@ -92,7 +92,7 @@ cat /mnt/etc/fstab
 
 ## Cambiar el entorno a la instalación nueva en `/mnt`
 
-> Te coloca dentro del sistema recién instalado, como si ya hubieras iniciado en él. A partir de ahora, todos los comandos afectan a la instalación y no al sistema live de Arch.
+Te coloca dentro del sistema recién instalado, como si ya hubieras iniciado en él. A partir de ahora, todos los comandos afectan a la instalación y no al sistema live de Arch.
 
 ```bash
 arch-chroot /mnt
