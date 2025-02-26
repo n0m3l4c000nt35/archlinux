@@ -256,7 +256,7 @@ sudo pacman -S xorg xorg-xinit xorg-server
 
 ## VMWare tools
 
-> Mejoran la integración de la VM con el host
+Mejoran la integración de la VM con el host
 
 ```bash
 sudo pacman -S open-vm-tools xf86-video-vmware xf86-input-vmmouse mesa
