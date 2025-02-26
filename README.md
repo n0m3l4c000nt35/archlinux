@@ -245,7 +245,7 @@ sudo pacman -Syyu
   
 ## Instalar xorg
 
-> Servidor gráfico en Linux, permite tener una interfaz gráfica (GUI) en lugar de solo usar la consola
+Servidor gráfico en Linux, permite tener una interfaz gráfica (GUI) en lugar de solo usar la consola
 
 - **xorg**: Metapaquete que instala varios componentes esenciales de Xorg (drivers, utilidades, configuraciones).
 - **xorg-server**: Es el servidor gráfico en sí, que se encarga de dibujar las ventanas en pantalla.
