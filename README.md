@@ -83,7 +83,7 @@ pacstrap /mnt linux linux-firmware base base-devel gtkmm3 networkmanager wpa_sup
 
 ## Generar archivo fstab
 
-> Asegura que las particiones se monten automáticamente al arrancar el sistema.
+Asegura que las particiones se monten automáticamente al arrancar el sistema.
 
 ```bash
 genfstab -U /mnt > /mnt/etc/fstab
