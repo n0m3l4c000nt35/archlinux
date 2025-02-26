@@ -68,7 +68,7 @@ lsblk
 pacstrap /mnt linux linux-firmware base base-devel gtkmm3 networkmanager wpa_supplicant grub sudo git nano
 ```
   - **pacstrap**: Script de Arch Linux que usa pacman (el gestor de paquetes de Arch) para instalar paquetes en un directorio específico.
-  - `/mnt`: Indica el directorio donde se instalarán los paquetes (la instalación de Arch montada).
+  - **/mnt**: Indica el directorio donde se instalarán los paquetes (la instalación de Arch montada).
   - **linux**: Instala el kernel de Linux.
   - **linux-firmware**: Drivers y firmware para hardware de red, gráficos, WiFi, etc.
   - **base**: Paquetes esenciales para que el sistema funcione.
