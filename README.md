@@ -2,8 +2,8 @@
 
 ## Instalación
 
-1. [Configuracion bspwm](#configuracion-bspwm)
-2. [Configuracion sxhkd](#configuracion-sxhkd)
+1. [Configuracion bspwm](#configuracion-bspwmrc)
+2. [Configuracion sxhkd](#configuracion-sxhkdrc)
 
 ## Configuracion bspwmrc
 
