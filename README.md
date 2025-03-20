@@ -2,10 +2,16 @@
 
 ## Instalación
 
-1. [Configuracion bspwmrc](#configuracion-bspwmrc)
-2. [Configuracion sxhkdrc](#configuracion-sxhkdrc)
+1. [Configuración bspwmrc](#configuracion-bspwmrc)
+2. [Configuración sxhkdrc](#configuracion-sxhkdrc)
+3. [Instalación kitty](#instalacion-kitty)
+4. [Configuracion kitty](#configuracion-kitty)
 
 ## Configuracion bspwmrc
+
+```bash
+nano $HOME/.config/bspwm/bspwmrc
+```
 
 ```bash
 #!/bin/sh
@@ -24,6 +30,10 @@ $HOME/.config/polybar/launch.sh &
 ```
 
 ## Configuracion sxhkdrc
+
+```bash
+nano $HOME/.config/sxhkd/sxhkdrc
+```
 
 ```bash
 # terminal emulator
@@ -118,4 +128,26 @@ super + {Left,Down,Up,Right}
 
 super + shift + f
 	/usr/bin/firefox 2>/dev/null & disown
+```
+
+## Instalacion kitty
+
+```bash
+sudo pacman -S extra/kitty
+```
+
+## Configuracion kitty
+
+```bash
+cursor_shape beam
+font_family monospace
+font_size 13.0
+map ctrl+left neighboring_window left
+map ctrl+right neighboring_window right
+map ctrl+up neighboring_window up
+map ctrl+down neighboring_window down
+map ctrl+shift+enter new_window_with_cwd
+map ctrl+shift+t new_tab_with_cwd
+map ctrl+shift+z toggle_layout stack
+shell zsh
 ```
