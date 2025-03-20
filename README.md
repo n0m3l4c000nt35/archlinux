@@ -6,10 +6,12 @@
 2. [Configuración sxhkdrc](#configuracion-sxhkdrc)
 3. [Instalación kitty](#instalacion-kitty)
 4. [Configuración kitty](#configuracion-kitty)
+5. [Instalación zsh](#instalacion-zsh)
 
 ## Configuracion bspwmrc
 
 ```bash
+mkdir -p $HOME/.config/bspwm/
 nano $HOME/.config/bspwm/bspwmrc
 ```
 
@@ -32,6 +34,7 @@ $HOME/.config/polybar/launch.sh &
 ## Configuracion sxhkdrc
 
 ```bash
+mkdir -p $HOME/.config/sxhkd/
 nano $HOME/.config/sxhkd/sxhkdrc
 ```
 
@@ -136,9 +139,10 @@ super + shift + f
 sudo pacman -S extra/kitty
 ```
 
-## Configuracion kitty
+### Configuracion kitty
 
 ```bash
+mkdir -p $HOME/.config/kitty/
 nano $HOME/.config/kitty/kitty.conf
 ```
 
@@ -154,4 +158,127 @@ map ctrl+shift+enter new_window_with_cwd
 map ctrl+shift+t new_tab_with_cwd
 map ctrl+shift+z toggle_layout stack
 shell zsh
+```
+
+## Instalacion zsh
+
+```bash
+sudo pacman -S zsh zsh-autosuggestions zsh-syntax-highlighting
+```
+
+### Configuracion zshrc
+
+```bash
+nano $HOME/.zshrc
+```
+
+```bash
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+if [[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+	source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+if [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+if [[ -f /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh ]]; then
+	source /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh
+fi
+
+# Use emacs key bindings
+bindkey -e
+
+# [Up-Arrow] - Up a line of history
+if [[ -n "${terminfo[kcuu1]}" ]]; then
+  bindkey -M emacs "${terminfo[kcuu1]}" up-line-or-history
+  bindkey -M viins "${terminfo[kcuu1]}" up-line-or-history
+  bindkey -M vicmd "${terminfo[kcuu1]}" up-line-or-history
+fi
+
+# [Down-Arrow] - Down a line of history
+if [[ -n "${terminfo[kcud1]}" ]]; then
+  bindkey -M emacs "${terminfo[kcud1]}" down-line-or-history
+  bindkey -M viins "${terminfo[kcud1]}" down-line-or-history
+  bindkey -M vicmd "${terminfo[kcud1]}" down-line-or-history
+fi
+
+if [[ -n "${terminfo[khome]}" ]]; then
+  bindkey -M emacs "${terminfo[khome]}" beginning-of-line
+  bindkey -M viins "${terminfo[khome]}" beginning-of-line
+  bindkey -M vicmd "${terminfo[khome]}" beginning-of-line
+  bindkey "^[[H" beginning-of-line
+fi
+
+# [End] - Go to end of line
+if [[ -n "${terminfo[kend]}" ]]; then
+  bindkey -M emacs "${terminfo[kend]}"  end-of-line
+  bindkey -M viins "${terminfo[kend]}"  end-of-line
+  bindkey -M vicmd "${terminfo[kend]}"  end-of-line
+  bindkey "^[[F" end-of-line
+fi
+
+# [Shift-Tab] - move through the completion menu backwards
+if [[ -n "${terminfo[kcbt]}" ]]; then
+  bindkey -M emacs "${terminfo[kcbt]}" reverse-menu-complete
+  bindkey -M viins "${terminfo[kcbt]}" reverse-menu-complete
+  bindkey -M vicmd "${terminfo[kcbt]}" reverse-menu-complete
+fi
+
+# [Backspace] - delete backward
+bindkey -M emacs '^?' backward-delete-char
+bindkey -M viins '^?' backward-delete-char
+bindkey -M vicmd '^?' backward-delete-char
+
+# [Delete] - delete forward
+if [[ -n "${terminfo[kdch1]}" ]]; then
+  bindkey -M emacs "${terminfo[kdch1]}" delete-char
+  bindkey -M viins "${terminfo[kdch1]}" delete-char
+  bindkey -M vicmd "${terminfo[kdch1]}" delete-char
+else
+  bindkey -M emacs "^[[3~" delete-char
+  bindkey -M viins "^[[3~" delete-char
+  bindkey -M vicmd "^[[3~" delete-char
+
+  bindkey -M emacs "^[3;5~" delete-char
+  bindkey -M viins "^[3;5~" delete-char
+  bindkey -M vicmd "^[3;5~" delete-char
+fi
+
+# [Ctrl-Delete] - delete whole forward-word
+bindkey -M emacs '^[[3;5~' kill-word
+bindkey -M viins '^[[3;5~' kill-word
+bindkey -M vicmd '^[[3;5~' kill-word
+
+# [Ctrl-RightArrow] - move forward one word
+bindkey -M emacs '^[[1;5C' forward-word
+bindkey -M viins '^[[1;5C' forward-word
+bindkey -M vicmd '^[[1;5C' forward-word
+
+# [Ctrl-LeftArrow] - move backward one word
+bindkey -M emacs '^[[1;5D' backward-word
+bindkey -M viins '^[[1;5D' backward-word
+bindkey -M vicmd '^[[1;5D' backward-word
+
+alias cat='bat'
+alias catn='bat --style=plain'
+alias catnp='bat --style=plain --paging=never'
+alias ll='lsd -lh --group-dirs=first'
+alias la='lsd -a --group-dirs=first'
+alias l='lsd --group-dirs=first'
+alias lla='lsd -lha --group-dirs=first'
+alias ls='lsd --group-dirs=first'
+alias firefox='firefox 2>/dev/null & disown'
+
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source <(fzf --zsh)
 ```
