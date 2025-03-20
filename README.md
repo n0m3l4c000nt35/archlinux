@@ -5,7 +5,7 @@
 1. [Configuración bspwmrc](#configuracion-bspwmrc)
 2. [Configuración sxhkdrc](#configuracion-sxhkdrc)
 3. [Instalación kitty](#instalacion-kitty)
-4. [Configuracion kitty](#configuracion-kitty)
+4. [Configuración kitty](#configuracion-kitty)
 
 ## Configuracion bspwmrc
 
@@ -137,6 +137,10 @@ sudo pacman -S extra/kitty
 ```
 
 ## Configuracion kitty
+
+```bash
+nano $HOME/.config/kitty/kitty.conf
+```
 
 ```bash
 cursor_shape beam
