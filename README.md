@@ -148,6 +148,7 @@ nano $HOME/.config/kitty/kitty.conf
 cursor_shape beam
 font_family monospace
 font_size 13.0
+
 map ctrl+left neighboring_window left
 map ctrl+right neighboring_window right
 map ctrl+up neighboring_window up
@@ -155,6 +156,18 @@ map ctrl+down neighboring_window down
 map ctrl+shift+enter new_window_with_cwd
 map ctrl+shift+t new_tab_with_cwd
 map ctrl+shift+z toggle_layout stack
+
+map f1 copy_to_buffer a
+map f2 paste_from_buffer a
+map f3 copy_to_buffer b
+map f4 paste_from_buffer b
+map f5 copy_to_buffer c
+map f6 paste_from_buffer c
+map f7 copy_to_buffer d
+map f8 paste_from_buffer d
+map f9 copy_to_buffer e
+map f10 paste_from_buffer e
+
 shell zsh
 ```
 
