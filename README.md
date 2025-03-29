@@ -363,3 +363,15 @@ label-muted = muted
 label-muted-foreground = #666
 click-right = pavucontrol
 ```
+
+```bash
+nano $HOME/.config/polybar/launch.sh
+```
+
+```bash
+#!/bin/bash
+
+killall -q polybar
+
+polybar main -c $HOME/.config/polybar/config.ini
+```
