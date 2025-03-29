@@ -6,6 +6,7 @@
 - [sxhkdrc](#sxhkdrc)
 - [kitty](#kitty)
 - [zsh](#zsh)
+- [polybar](#polybar)
 
 ## bspwmrc
 
@@ -276,4 +277,89 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source <(fzf --zsh)
+```
+
+## polybar
+
+```bash
+nano $HOME/.config/polybar/config.ini
+```
+
+```bash
+[bar/main]
+width = 99.5%
+height = 40
+offset-x = 0.25%
+offset-y = 1%
+module-margin = 7pt
+padding-left = 2
+padding-right = 2
+background = #aa000000
+modules-left = date ethernet vpn
+modules-center = workspaces
+modules-right = target pulseaudio
+font-0 = "Hack Nerd Font Mono:style=regular:size=10;1"
+font-1 = "Hack Nerd Font Mono:style=regular:size=16;2"
+font-2 = "Hack Nerd Font Mono:style=regular:size=18;2"
+font-3 = "Hack Nerd Font Mono:style=regular:size=20;4"
+
+[module/date]
+type = internal/date
+interval = 1.0
+date = %d/%m/%Y%
+time = %H:%M:%S
+format = <label>
+format-foreground = #fff
+label = %date% %{T2}%{F#ff1493}%{F-}%{T-} %time%
+
+[module/ethernet]
+type = custom/script
+exec = $HOME/.config/polybar/scripts/ethernet_status.sh
+interval = 2
+format = <label>
+
+[module/vpn]
+type = custom/script
+exec = $HOME/.config/polybar/scripts/vpn_status.sh
+click-left = echo -n "$(ip a show tun0 | grep -oP '(?<=inet\s)\d+\.\d+\.\d+\.\d+')" | xclip -sel clip
+interval = 2
+format = <label>
+
+[module/workspaces]
+type = internal/xworkspaces
+icon-default = 
+format = <label-state>
+format-font = 3
+label-active = 󱓇
+label-active-foreground = #39ff14
+label-active-padding = 5px
+label-active-font = 4
+label-occupied = %icon%
+label-occupied-foreground = #4439ff14
+label-occupied-padding = 5px
+label-occupied-font = 2
+label-urgent = %icon%
+label-urgent-foreground = #e51d0b
+label-urgent-padding = 5px
+label-empty = %icon%
+label-empty-foreground = #6a6a6a
+label-empty-padding = 5px
+label-empty-font = 2
+
+[module/target]
+type = custom/script
+exec = $HOME/.config/polybar/scripts/target_to_hack.sh
+click-left = echo -n "$(cat $HOME/.config/polybar/scripts/target.txt)" | xclip -sel clip
+interval = 2
+format = <label>
+
+[module/pulseaudio]
+type = internal/pulseaudio
+use-ui-max = true
+interval = 1
+reverse-scroll = false
+format-volume = <label-volume>
+label-muted = muted
+label-muted-foreground = #666
+click-right = pavucontrol
 ```
