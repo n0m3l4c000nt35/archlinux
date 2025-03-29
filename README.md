@@ -146,6 +146,7 @@ nano $HOME/.config/kitty/kitty.conf
 
 ```bash
 cursor_shape beam
+enable_audio_bell no
 font_family monospace
 font_size 13.0
 
