@@ -2,13 +2,12 @@
 
 ## Instalación
 
-1. [Configuración bspwmrc](#configuracion-bspwmrc)
-2. [Configuración sxhkdrc](#configuracion-sxhkdrc)
-3. [Instalación kitty](#instalacion-kitty)
-4. [Configuración kitty](#configuracion-kitty)
-5. [Instalación zsh](#instalacion-zsh)
+- [bspwmrc](#bspwmrc)
+- [sxhkdrc](#sxhkdrc)
+- [kitty](#kitty)
+- [zsh](#zsh)
 
-## Configuracion bspwmrc
+## bspwmrc
 
 ```bash
 mkdir -p $HOME/.config/bspwm/
@@ -31,7 +30,7 @@ bspc config gapless_monocle      true
 $HOME/.config/polybar/launch.sh &
 ```
 
-## Configuracion sxhkdrc
+## sxhkdrc
 
 ```bash
 mkdir -p $HOME/.config/sxhkd/
@@ -133,13 +132,11 @@ super + shift + f
 	/usr/bin/firefox 2>/dev/null & disown
 ```
 
-## Instalacion kitty
+## kitty
 
 ```bash
 sudo pacman -S extra/kitty
 ```
-
-### Configuracion kitty
 
 ```bash
 mkdir -p $HOME/.config/kitty/
@@ -160,13 +157,11 @@ map ctrl+shift+z toggle_layout stack
 shell zsh
 ```
 
-## Instalacion zsh
+## zsh
 
 ```bash
 sudo pacman -S zsh zsh-autosuggestions zsh-syntax-highlighting
 ```
-
-### Configuracion zshrc
 
 ```bash
 nano $HOME/.zshrc
