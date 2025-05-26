@@ -235,14 +235,15 @@ shell zsh
 sudo pacman -S zsh zsh-autosuggestions zsh-syntax-highlighting
 ```
 
+### .zshrc
+
 ```bash
 nano $HOME/.zshrc
 ```
 
 ```bash
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -258,6 +259,43 @@ fi
 if [[ -f /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh ]]; then
 	source /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh
 fi
+
+HISTFILE=~/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=1000000
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_VERIFY
+setopt EXTENDED_HISTORY
+export HISTIGNORE="ls:cd:pwd:exit:clear"
+
+autoload -Uz compinit
+compinit
+
+zstyle ':completion:*' auto-description 'specify: %d'
+zstyle ':completion:*' completer _expand _complete _correct _approximate
+zstyle ':completion:*' format 'Completing %d'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' menu select=2
+eval "$(dircolors -b)"
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
+zstyle ':completion:*' menu select=long
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' use-compctl false
+zstyle ':completion:*' verbose true
+
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # Use emacs key bindings
 bindkey -e
@@ -342,12 +380,50 @@ alias l='lsd --group-dirs=first'
 alias lla='lsd -lha --group-dirs=first'
 alias ls='lsd --group-dirs=first'
 alias firefox='firefox 2>/dev/null & disown'
+alias bs='/usr/bin/burpsuite 2>/dev/null & disown'
+
+htb(){
+  opt=$1
+  case $opt in
+    a) sudo openvpn $HOME/academy-regular.ovpn ;;
+    m) sudo openvpn $HOME/lab_n0m3l4c000nt35.ovpn ;;
+    c) sudo openvpn $HOME/competitive_n0m3l4c000nt35.ovpn ;;
+    *) echo "Uso: htb a | m | c"
+  esac
+}
+
+st(){
+  ip_address=$1
+  machine_name=$2
+  echo "$ip_address" > $HOME/.config/polybar/scripts/target.txt
+}
+
+ct(){
+  echo "" > $HOME/.config/polybar/scripts/target.txt
+}
+
+ep(){
+    ports="$(/usr/bin/cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
+    ip_address="$(/usr/bin/cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)"
+    echo -e "\n[*] Extracting information...\n" > extractPorts.tmp
+    echo -e "\t[*] IP Address: $ip_address"  >> extractPorts.tmp
+    echo -e "\t[*] Open ports: $ports\n"  >> extractPorts.tmp
+    echo $ports | tr -d '\n' | xclip -sel clip
+    echo -e "[*] Ports copied to clipboard\n"  >> extractPorts.tmp
+    cat extractPorts.tmp; rm extractPorts.tmp
+}
 
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source <(fzf --zsh)
+
+export PATH="$PATH:/home/$USER/.local/bin:/home/$USER/.cargo/bin:/home/$USER/go/bin"
+
+# Controlar por donde sale el audio
+alias parlantes='pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo && for i in $(pactl list short sink-inputs | cut -f1); do pactl move-sink-input $i alsa_output.pci-0000_00_1f.3.analog-stereo; done'
+alias auris='pactl set-default-sink alsa_output.usb-Generic_Razer_Base_Station_V2_Chroma-00.analog-stereo && for i in $(pactl list short sink-inputs | cut -f1); do pactl move-sink-input $i alsa_output.usb-Generic_Razer_Base_Station_V2_Chroma-00.analog-stereo; done'
 ```
 
 ## polybar
