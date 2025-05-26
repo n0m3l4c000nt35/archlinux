@@ -365,14 +365,14 @@ offset-y = 1%
 module-margin = 7pt
 padding-left = 2
 padding-right = 2
-background = #aa000000
 modules-left = date ethernet vpn
 modules-center = workspaces
-modules-right = target pulseaudio
+modules-right = target pulseaudio net
 font-0 = "Hack Nerd Font Mono:style=regular:size=10;1"
 font-1 = "Hack Nerd Font Mono:style=regular:size=16;2"
 font-2 = "Hack Nerd Font Mono:style=regular:size=18;2"
 font-3 = "Hack Nerd Font Mono:style=regular:size=20;4"
+font-4 = Noto Color Emoji:scale=10;2
 
 [module/date]
 type = internal/date
@@ -429,10 +429,21 @@ type = internal/pulseaudio
 use-ui-max = true
 interval = 1
 reverse-scroll = false
-format-volume = <label-volume>
+format-volume = <label-volume> %{T2}%{F#4439ff}%{F-}%{T-}
+label-volume-foreground = #4439ff
 label-muted = muted
 label-muted-foreground = #666
 click-right = pavucontrol
+
+[module/net]
+type = internal/network
+interface = enp5s0
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+label-connected = [%netspeed% # %linkspeed%]
+label-connected-foreground = #2494e7
+label-disconnected = not connected
+label-disconnected-foreground = #666
 ```
 
 ```bash
