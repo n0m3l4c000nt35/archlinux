@@ -115,21 +115,21 @@ super + {_,shift + }c
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
-    bspc desktop -f {prev,next}.local
+	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
 super + {grave,Tab}
-    bspc {node,desktop} -f last
+	bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
 super + {o,i}
-    bspc wm -h off; \
-    bspc node {older,newer} -f; \
-    bspc wm -h on
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
-    bspc {desktop -f,node -d} '^{1-9,10}'
+	bspc {desktop -f,node -d} '^{1-9,10}'
 
 # preselect the direction
 super + ctrl + {Left,Down,Up,Right}
@@ -151,8 +151,41 @@ super + ctrl + shift + space
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+# firefox
 super + shift + f
 	/usr/bin/firefox 2>/dev/null & disown
+
+# copy target
+super + shift + alt + t
+  $HOME/.config/polybar/scripts/copy_target.sh
+
+# flameshot
+super + shift + alt + s
+  /usr/bin/flameshot gui
+
+# subir volumen
+XF86AudioRaiseVolume
+    pactl set-sink-volume @DEFAULT_SINK@ +1%
+
+# bajar volumen
+XF86AudioLowerVolume
+    pactl set-sink-volume @DEFAULT_SINK@ -1%
+
+# mutear/desmutear
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# burpsuite
+super + shift + alt + b
+  /usr/bin/burpsuite 2>/dev/null & disown
+
+# chromium
+super + shift g
+  /usr/bin/chromium 2>/dev/null & disown
+
+# bloodhound
+super + shift + b
+  /usr/bin/bloodhound 2>/dev/null & disown
 ```
 
 ## kitty
