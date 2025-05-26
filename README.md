@@ -201,9 +201,11 @@ nano $HOME/.config/kitty/kitty.conf
 
 ```bash
 cursor_shape beam
-enable_audio_bell no
 font_family monospace
 font_size 13.0
+
+map ctrl+shift+enter new_window_with_cwd
+map ctrl+shift+t new_tab_with_cwd
 
 map ctrl+left neighboring_window left
 map ctrl+right neighboring_window right
