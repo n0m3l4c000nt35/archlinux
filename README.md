@@ -11,22 +11,23 @@
 ## bspwmrc
 
 ```bash
-mkdir -p $HOME/.config/bspwm/
-nano $HOME/.config/bspwm/bspwmrc
-```
-
-```bash
-#!/bin/sh
+#! /bin/sh
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor DP-0 -d I II III IV V
+bspc monitor HDMI-0 -d VI VII VIII IX X
+
+bspc desktop -f ^1
 
 bspc config border_width         0
-bspc config window_gap           12
-bspc config split_ratio          0.5
+bspc config window_gap          12
+
+bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
+
+feh --bg-center $HOME/wallpaper.ext
 
 $HOME/.config/polybar/launch.sh &
 ```
