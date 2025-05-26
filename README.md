@@ -446,6 +446,8 @@ label-disconnected = not connected
 label-disconnected-foreground = #666
 ```
 
+### launch.sh
+
 ```bash
 nano $HOME/.config/polybar/launch.sh
 ```
@@ -456,4 +458,54 @@ nano $HOME/.config/polybar/launch.sh
 killall -q polybar
 
 polybar main -c $HOME/.config/polybar/config.ini
+```
+
+### copy_target.sh
+
+```bash
+#!/bin/bash
+
+echo -n "$(cat $HOME/.config/polybar/scripts/target.txt | awk '{print $1}')" | xclip -sel clip
+```
+
+### ethernet_status.sh
+
+```bash
+#!/bin/sh
+
+ETH=$(ip -4 a show enp5s0 | grep -oP '(?<=inet\s)\d+\.\d+\.\d+\.\d+')
+
+if [ -n "$ETH" ]; then
+  echo "%{T2}%{F#2494e7}󰈀%{T-} %{F#fff}$(ip -4 a show enp5s0 | grep -oP '(?<=inet\s)\d+\.\d+\.\d+\.\d+')"
+else
+  echo "%{T2}%{F#808080}󰈀%{T-} %{F#fff} Ups!"
+fi
+```
+
+### target_to_hack.sh
+
+```bash
+#!/bin/bash
+
+ip_address=$(/bin/cat $HOME/.config/polybar/scripts/target.txt)
+
+if [ -n "$ip_address" ]; then
+  echo "%{T2}%{F#ff0000}󰓾%{T-} %{F#fff}$ip_address"
+else
+  echo ""
+fi
+```
+
+### vpn_status.sh
+
+```bash
+#!/bin/sh
+
+IFACE=$(ip -o link show | awk -F': ' '/tun0/ {print $2}')
+
+if [ "$IFACE" = "tun0" ]; then
+  echo "%{T2}%{F#1bbf3e}󰆧%{T-} %{F#fff}$(ip a show tun0 | grep -oP '(?<=inet\s)\d+\.\d+\.\d+\.\d+')"
+else
+  echo ""
+fi
 ```
