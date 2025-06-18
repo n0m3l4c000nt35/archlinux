@@ -4,6 +4,7 @@
 - [Instalación de paquetes](#instalacion-de-paquetes)
 - [Permisos](#permisos)
 - [.xinitrc](#xinitrc)
+- [.Xresources](#xresources)
 
 ## Actualizacion
 
@@ -43,3 +44,7 @@ chmod +x $HOME/.config/polybar/launch.sh
 ## .xinitrc
 
 [.xinitrc](/files/.xinitrc)
+
+## .Xresources
+
+[.Xresources](/files/.Xresources)
