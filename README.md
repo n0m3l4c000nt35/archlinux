@@ -7,6 +7,8 @@
 - [.Xresources](#xresources)
 - [Fuentes](#fuentes)
 - [bspwm](#bspwm)
+  - [bspwmrc](#bspwmrc)
+  - [bspwm_resize](#bspwm_resize)
 
 ## Actualizacion
 
@@ -61,4 +63,10 @@ sudo rm /usr/share/fonts/truetype/hacknerd/LICENSE.md /usr/share/fonts/truetype/
 
 ## bspwm
 
+### bspwmrc
+
 [bspwmrc](/files/bspwmrc)
+
+### bspwm_resize
+
+[bspwm_resize](/files/bspwm_resize)
