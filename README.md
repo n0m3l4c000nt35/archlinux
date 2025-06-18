@@ -38,3 +38,7 @@ chmod +x $HOME/.config/polybar/scripts/{ethernet_status.sh,vpn_status.sh,target_
 chmod +x $HOME/.config/bspwm/scripts/bspwm_resize
 chmod +x $HOME/.config/polybar/launch.sh
 ```
+
+## .xinitrc
+
+[.xinitrc](/files/.xinitrc)
