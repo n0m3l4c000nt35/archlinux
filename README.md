@@ -6,6 +6,7 @@
 - [.xinitrc](#xinitrc)
 - [.Xresources](#xresources)
 - [Fuentes](#fuentes)
+- [bspwm](#bspwm)
 
 ## Actualizacion
 
@@ -57,3 +58,7 @@ sudo wget -P /usr/share/fonts/truetype/hacknerd https://github.com/ryanoasis/ner
 sudo unzip /usr/share/fonts/truetype/hacknerd/Hack.zip -d /usr/share/fonts/truetype/hacknerd
 sudo rm /usr/share/fonts/truetype/hacknerd/LICENSE.md /usr/share/fonts/truetype/hacknerd/README.md /usr/share/fonts/truetype/hacknerd/Hack.zip
 ```
+
+## bspwm
+
+[bspwmrc](/files/bspwmrc)
