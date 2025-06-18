@@ -2,6 +2,7 @@
 
 - [Actualización](#actualizacion)
 - [Instalación de paquetes](#instalacion-de-paquetes)
+- [Permisos](#permisos)
 
 ## Actualizacion
 
@@ -28,3 +29,12 @@ sudo mkdir /usr/share/fonts/truetype/hacknerd
 sudo mkdir /usr/share/zsh-sudo
 ```
 
+## Permisos
+
+```bash
+chmod +x $HOME/.xinitrc
+chmod u+x $HOME/.config/bspwm/bspwmrc
+chmod +x $HOME/.config/polybar/scripts/{ethernet_status.sh,vpn_status.sh,target_to_hack.sh,copy_target.sh}
+chmod +x $HOME/.config/bspwm/scripts/bspwm_resize
+chmod +x $HOME/.config/polybar/launch.sh
+```
