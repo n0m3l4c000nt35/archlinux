@@ -9,6 +9,7 @@
 - [bspwm](#bspwm)
   - [bspwmrc](#bspwmrc)
   - [bspwm_resize](#bspwm_resize)
+  - [sxhkdrc](#sxhkdrc)
 
 ## Actualizacion
 
@@ -70,3 +71,7 @@ sudo rm /usr/share/fonts/truetype/hacknerd/LICENSE.md /usr/share/fonts/truetype/
 ### bspwm_resize
 
 [bspwm_resize](/files/bspwm_resize)
+
+### sxhkdrc
+
+[sxhkdrc](/files/sxhkdrc)
