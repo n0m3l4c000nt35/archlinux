@@ -5,6 +5,7 @@
 - [Permisos](#permisos)
 - [.xinitrc](#xinitrc)
 - [.Xresources](#xresources)
+- [Fuentes](#fuentes)
 
 ## Actualizacion
 
@@ -48,3 +49,11 @@ chmod +x $HOME/.config/polybar/launch.sh
 ## .Xresources
 
 [.Xresources](/files/.Xresources)
+
+## Fuentes
+
+```bash
+sudo wget -P /usr/share/fonts/truetype/hacknerd https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Hack.zip
+sudo unzip /usr/share/fonts/truetype/hacknerd/Hack.zip -d /usr/share/fonts/truetype/hacknerd
+sudo rm /usr/share/fonts/truetype/hacknerd/LICENSE.md /usr/share/fonts/truetype/hacknerd/README.md /usr/share/fonts/truetype/hacknerd/Hack.zip
+```
