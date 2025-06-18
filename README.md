@@ -3,6 +3,7 @@
 - [Actualización](#actualizacion)
 - [Instalación de paquetes](#instalacion-de-paquetes)
 - [Permisos](#permisos)
+- [.xinitrc](#xinitrc)
 
 ## Actualizacion
 
