@@ -10,6 +10,8 @@
   - [bspwmrc](#bspwmrc)
   - [bspwm_resize](#bspwm_resize)
   - [sxhkdrc](#sxhkdrc)
+- [picom](#picom)
+  - [picom.conf](#picomconf)
 
 ## Actualizacion
 
@@ -75,3 +77,9 @@ sudo rm /usr/share/fonts/truetype/hacknerd/LICENSE.md /usr/share/fonts/truetype/
 ### sxhkdrc
 
 [sxhkdrc](/files/sxhkdrc)
+
+## picom
+
+### picom.conf
+
+[picom.conf](/files/picom.conf)
