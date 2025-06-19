@@ -17,6 +17,13 @@
 - [rofi](#rofi)
   - [config.rasi](/files/configrasi)
   - [box-theme.rasi](/files/box-themerasi)
+- [polybar](#polybar)
+  - [launch.sh](#launchsh)
+  - [config.ini](#configini)
+  - [ethernet_status.sh](#ethernet_statussh)
+  - [vpn_status.sh](#vpn_statussh)
+  - [target_to_hack.sh](#target_to_hacksh)
+  - [copy_target.sh](#copy_targetsh)
 
 ## Actualizacion
 
@@ -110,3 +117,29 @@ kitten themes
 ### box-theme.rasi
 
 [box-theme.rasi](/files/box-theme.rasi)
+
+## polybar
+
+### launch.sh
+
+[launch.sh](/files/launch.sh)
+
+### config.ini
+
+[config.ini](/files/config.ini)
+
+### ethernet_status.sh
+
+[ethernet_status.sh](/files/ethernet_status.sh)
+
+### vpn_status.sh
+
+[vpn_status.sh](/files/vpn_status.sh)
+
+### target_to_hack.sh
+
+[target_to_hack.sh](/files/target_to_hack.sh)
+
+### copy_target.sh
+
+[copy_target.sh](/files/copy_target.sh)
