@@ -1,0 +1,30 @@
+configuration {
+    case-sensitive: false;
+    combi-modes: "window,drun,run";
+    display-combi: " ";
+    disable-history: false;
+    drun {
+      fallback-icon: "application-x-addon";
+      scan-desktop: true;
+    }
+    run {
+      fallback-icon: "application-x-addon";
+    }
+    drun-display-format: "{icon}\n{name}";
+    font: "Hack Nerd Font 12";
+    kb-accept-entry: "Return";
+    kb-cancel: "Escape";
+    kb-page-next: "Page_Down";
+    kb-page-prev: "Page_Up";
+    kb-row-down: "Down";  
+    kb-row-up: "Up";
+    kb-remove-char-back: "BackSpace";
+    kb-remove-char-forward: "Delete";
+    matching: "fuzzy";
+    modes: "combi";
+    show-icons: true;
+    sort: true;
+    terminal: "kitty";
+}
+
+@theme "box-theme.rasi"
