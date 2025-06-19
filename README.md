@@ -28,7 +28,7 @@ sudo pacman -S xorg dkms bspwm kitty feh polybar picom rofi i3lock flameshot xcl
 ## Creación de directorios
 
 ```bash
-mkdir -p $HOME/.config/{bspwm,sxhkd,kitty,polybar,rofi,htb}
+mkdir -p $HOME/.config/{bspwm,sxhkd,picom,kitty,polybar,rofi,htb}
 mkdir $HOME/.config/bspwm/scripts
 mkdir $HOME/.config/polybar/scripts
 mkdir $HOME/.config/htb/{vpn,machines}
