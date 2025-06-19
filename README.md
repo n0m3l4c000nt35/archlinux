@@ -88,6 +88,12 @@ sudo rm /usr/share/fonts/truetype/hacknerd/LICENSE.md /usr/share/fonts/truetype/
 
 ## kitty
 
+Seleccionar el theme de preferencia y seleccionar la opción Place the theme file in /home/kali/.config/kitty but do not modify kitty.conf. En mi caso seleccioné el theme Box y agregué la línea include Box.conf al archivo kitty.conf como se muestra a continuación.
+
+```bash
+kitten themes
+```
+
 ### kitty.conf
 
 [kitty.conf](/files/kitty.conf)
