@@ -14,6 +14,9 @@
   - [picom.conf](#picomconf)
 - [kitty](#kitty)
   - [kitty.conf](/files/kitty.conf)
+- [rofi](#rofi)
+  - [config.rasi](/files/configrasi)
+  - [box-theme.rasi](/files/box-themerasi)
 
 ## Actualizacion
 
@@ -97,3 +100,13 @@ kitten themes
 ### kitty.conf
 
 [kitty.conf](/files/kitty.conf)
+
+## rofi
+
+### config.rasi
+
+[config.rasi](/files/config.rasi)
+
+### box-theme.rasi
+
+[box-theme.rasi](/files/box-theme.rasi)
