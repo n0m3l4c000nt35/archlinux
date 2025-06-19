@@ -12,6 +12,8 @@
   - [sxhkdrc](#sxhkdrc)
 - [picom](#picom)
   - [picom.conf](#picomconf)
+- [kitty](#kitty)
+  - [kitty.conf](/files/kitty.conf)
 
 ## Actualizacion
 
@@ -83,3 +85,9 @@ sudo rm /usr/share/fonts/truetype/hacknerd/LICENSE.md /usr/share/fonts/truetype/
 ### picom.conf
 
 [picom.conf](/files/picom.conf)
+
+## kitty
+
+### kitty.conf
+
+[kitty.conf](/files/kitty.conf)
